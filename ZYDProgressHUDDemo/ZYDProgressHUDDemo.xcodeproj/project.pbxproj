@@ -13,6 +13,7 @@
 		2A6515861FAC3A1300CE3E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A6515851FAC3A1300CE3E80 /* Assets.xcassets */; };
 		2A6515891FAC3A1300CE3E80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A6515871FAC3A1300CE3E80 /* LaunchScreen.storyboard */; };
 		2A6515921FAC3ADA00CE3E80 /* ZYDProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6515911FAC3ADA00CE3E80 /* ZYDProgressHUD.swift */; };
+		2A6515941FAC475900CE3E80 /* ZYDBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6515931FAC475900CE3E80 /* ZYDBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2A6515881FAC3A1300CE3E80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A65158A1FAC3A1300CE3E80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A6515911FAC3ADA00CE3E80 /* ZYDProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYDProgressHUD.swift; sourceTree = "<group>"; };
+		2A6515931FAC475900CE3E80 /* ZYDBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYDBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				2A6515911FAC3ADA00CE3E80 /* ZYDProgressHUD.swift */,
+				2A6515931FAC475900CE3E80 /* ZYDBackgroundView.swift */,
 			);
 			name = ZYDProgressHUD;
 			path = ../../ZYDProgressHUD;
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6515941FAC475900CE3E80 /* ZYDBackgroundView.swift in Sources */,
 				2A6515811FAC3A1300CE3E80 /* ViewController.swift in Sources */,
 				2A65157F1FAC3A1300CE3E80 /* AppDelegate.swift in Sources */,
 				2A6515921FAC3ADA00CE3E80 /* ZYDProgressHUD.swift in Sources */,

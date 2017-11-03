@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var hud: ZYDProgressHUD!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        hud = ZYDProgressHUD.showHUDToView(toView: view, animated: true)
+        hud.progressHUDMode = .indeterminate
+        view.addSubview(hud)
+        
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        hud.removeFromSuperview()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
