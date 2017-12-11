@@ -14,12 +14,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        hud = ZYDProgressHUD.showHUDToView(toView: view, animated: true)
-        hud.progressHUDMode = .indeterminate
-        view.addSubview(hud)
-        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,6 +24,57 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        
+        switch indexPath.row {
+        case 0:
+            cell.textLabel?.text = "indeterminate"
+        case 1:
+            cell.textLabel?.text = "text"
+        default:
+            cell.textLabel?.text = "indeterminate"
+        }
+        
+        cell.textLabel?.textAlignment = .center
+        return cell
+    }
+    
+}
+
+extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    
+        let vc = UIViewController()
+        vc.view.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        
+        hud = ZYDProgressHUD.showHUDToView(toView: vc.view, animated: true)
+
+        
+        switch indexPath.row {
+        case 0:
+            hud.progressHUDMode = .indeterminate
+        case 1:
+            hud.progressHUDMode = .text
+        default:
+            hud.progressHUDMode = .indeterminate
+        }
+        
+        present(vc, animated: true) { [weak self] in
+            vc.view.addSubview(self!.hud)
+        }
+        
+    }
+    
 }
 

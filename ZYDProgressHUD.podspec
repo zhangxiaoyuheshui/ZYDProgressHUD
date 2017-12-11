@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "ZYDProgressHUD"
-  s.version      = "0.0.1"
+  s.version      = "0.0.3"
   s.summary      = "Simple and easy to use progress indicator"
 
   s.description  = "Simple and easy to use progress indicator. You can use it to create your ProgressHUD."

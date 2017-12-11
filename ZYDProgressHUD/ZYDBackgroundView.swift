@@ -14,7 +14,7 @@ public enum ZYDProgressHUDMode : Int {
 }
 
 
-class ZYDBackgroundView: UIView {
+public class ZYDBackgroundView: UIView {
 
     public var mode: ZYDProgressHUDMode!
     
@@ -35,7 +35,7 @@ class ZYDBackgroundView: UIView {
         case .indeterminate:
             setupIndeterminateView()
         case .text:
-            setupView()
+            setupTextView()
         default:
             setupIndeterminateView()
         }
@@ -43,7 +43,7 @@ class ZYDBackgroundView: UIView {
     
     private func setupIndeterminateView() {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-        indicator.color = UIColor.blue
+        indicator.color = UIColor.black
         indicator.center = center
         addSubview(indicator)
         indicator.startAnimating()
@@ -51,5 +51,23 @@ class ZYDBackgroundView: UIView {
     
     private func setupTextView() {
         
+        let indicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        indicator.color = UIColor.black
+        let centerX = center.x
+        let centerY = center.y - 10
+        indicator.center = CGPoint(x: centerX, y: centerY)
+        addSubview(indicator)
+        indicator.startAnimating()
+
+        let textLabel = UILabel()
+        textLabel.text = "loading..."
+        textLabel.frame = CGRect(x: 0, y: frame.height - 30, width: frame.width, height: 30)
+        textLabel.textAlignment = .center
+        textLabel.font = UIFont.systemFont(ofSize: 14.0)
+        textLabel.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1.0)
+        addSubview(textLabel)
+        
     }
+    
+    
 }
